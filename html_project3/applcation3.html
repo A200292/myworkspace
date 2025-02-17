@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width="width=devicewidth,initial scale=1.0">
+    <title>Job Application3</title>
+   
+   <style>
+    
+    .container
+    { border-width:10px;
+        margin: 0px 300px 0px 300px;
+    }
+    input
+    {   padding-top: 10px;
+        padding-inline: 10px;
+    }
+    #check1,#check2,#check3,#check4
+    {
+        margin-top: 10px;
+    }
+    #check5
+
+    {  
+        margin-top: 10px;
+         padding-top: 10px;
+        padding-inline: 76px;
+    }
+    #addr
+    {   padding-top: 10px;
+        padding-inline: 110px;
+    }
+    #addr1
+    {   padding-top: 10px;
+        padding-inline:44px;
+    }
+   
+    </style>
+    </head>
+    <body>
+<div class="container">
+    <h2>Employment Application </h3>
+        <hr style="color: black;"  >
+        <p> Fill the form below accurately indicating your suitability to job applying for.<br>
+        #Employment Application Fill the form below accurately indicating your suitability 
+        to job applying for.
+        </p><br>
+      <form >
+        <input type="text" id="fname" name="fname" placeholder="First">
+        <input type="text" id="lname" name="lname" placeholder="Last"><br>
+        <label for="bdate">
+            Birth Date:
+        </label><br>
+        <input type="date" id="bdate" name="bdate" placeholder="MM/DD/YYYY">
+        <br>
+    <label for="phone">
+        Phone Number:
+    </label><label for="Email">
+        E-mail Address:
+    </label><br>
+    <input type="tel" id="phone" name="phone" pattern="[0-9](3)[0-9](3)-[0-9](4)" placeholder="(201)555-0123">
+<input type="email" id="Email" name="Email" placeholder="john.doe@example.com"><br>
+<label for="addr">
+    Address:
+</label><br>
+<input type="text" id="addr" name="addr" placeholder="Address line 1"><br>
+<input type="text" id="addr" name="addr" placeholder="Address line 2"><br>
+<input type="text" id="addr1" name="addr1" placeholder="City">
+<Select id="Reg"  style="padding-inline:29px ;">
+    <option value="">
+        Region
+    </option>
+            <option value="street1">
+        Street1
+    </option>
+    <option value="street2">
+        Street2
+    </option>
+</Select>
+<br>
+<input type="text" id="addr1" name="addr1" placeholder="Postal/Zipcode">
+<Select id="Reg" style="padding-inline:10px ;">
+    <option value="">
+        United States
+    </option>
+            <option value="Canada">
+        Canada
+    </option>
+    <option value="Germany">
+        Germany
+    </option>
+</Select>
+<br>
+<p style="margin-top: 30px;">
+    How were you referred to us?
+</p><br>
+<input type="checkbox" id="check1" name="check1"><label for="check1">
+    Newspaper
+
+</label><br>
+<input type="checkbox" id="check2" name="check2"><label for="check2">
+    Facebook
+    
+</label><br>
+<input type="checkbox" id="check3" name="check3"><label for="check3">
+    Twitter
+    
+</label><br>
+<input type="checkbox" id="check4" name="check4"><label for="check4">
+    LinkedIn
+    
+</label><br>
+<input type="checkbox" id="check5" name="check5"><label for="check5">
+   Other:<input type="text" id="check5" name="check5">
+    
+</label>
+<br>
+<br>
+<label for="resume">
+    Upload Resume:
+</label><br><br>
+<input type="file" id="resume" name="resume">
+<br>
+
+<h2>
+    Job Skills & Training
+</h2><br>
+
+<label for="skills">
+    Describe your skills
+</label><br><br>
+<input type="text" id="skills" name="skills"style="padding-right:210px;" >
+<br><br>
+
+
+<label for="skills">
+   Training or Certificatios
+</label><br><br>
+<input type="file" id="skills" name="skills">
+<br>
+<input type="file" id="files" name="files" multiple><br>
+<button type="button" style="background-color: black; color: beige; padding: 10px 10px 10px 10px;">
+    Submit Application
+</button>
+</div>
+    </form>
+    </body>
+    </html>

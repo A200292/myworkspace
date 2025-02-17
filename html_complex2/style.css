@@ -1,0 +1,174 @@
+body
+{
+    background-color: rgb(199, 194, 194);
+}
+
+.rec1
+{
+    border-style: double;
+    border-color: rgb(107, 106, 106);
+    margin: 100px 100px 0px 200px;
+
+}
+
+    
+    #selec1
+    {
+        justify-items: right;
+        
+    }
+
+    #view1
+    {
+        justify-items: right;
+        padding-left: 400px;
+    }
+
+    .rec2
+    {
+       
+        margin-left: 200px;
+       
+    
+        }
+        
+        button
+        {
+            padding-left: 45px;
+        }
+        #ok
+        {
+            margin-left: 220px;
+        }
+        
+      table{
+        
+            margin-left: 200px;
+            width: 79%;
+        }
+        #cust
+        { 
+           margin-left: 10px;
+            
+        }
+
+        #emp
+        {
+            margin-left: 51px;
+
+        }
+         #date
+
+       {
+        margin-left: 27px;
+       }
+       #date1
+       {
+        margin-left: 19px;
+       }
+
+       #date2
+       {
+        margin-left: 27px;
+       }
+       
+       label{
+        margin-left: 5px;
+
+        font-weight: bold;
+       }
+       #Addr
+       {
+        margin-left: 37px;
+       }
+
+       #country
+       {
+        margin-left: 63px;
+       }
+       #reg
+       {
+        margin-left: 44px;
+       }
+       #code
+       {
+        margin-left: 16px;
+       }
+       #ship
+       {
+        margin-left: 2px;
+       }
+       
+       .container
+       {
+    
+        margin: 0px 100px 0px 200px;
+        border-color: rgb(29, 28, 28);
+        border-style: double;
+       }
+       p{
+        display: inline;
+       }
+        
+    
+       #con1
+       {
+        border-style: double;
+        
+       }
+       
+       th, td{
+        color: rgb(10, 90, 136);
+       }
+    .t2
+      {
+        border-spacing: 10px;
+      }
+      .con2
+      { 
+        margin: 0px 100px 0px 200px;
+        padding-left: 482px;
+       }
+       #shnm
+       {
+       
+        margin-left:  0px 100px 0px 200px;
+        width: 25%;
+       }
+      #sub
+      {
+        width: 30%;
+      }
+     .t3
+
+     {
+        
+        margin-left: 205px;
+            width: 80%;
+
+            
+         }
+     #lb1
+     {
+        margin-left: 190px;
+     }
+#frt
+{
+    width:10%;
+   
+}
+.t4
+{
+    margin:0px 100px 0px 200px;   
+    margin-left:12px;}
+
+#to1
+{ 
+    margin-left:266px;
+    
+}
+#total
+{
+    width:10%;
+    border: 0px;
+}

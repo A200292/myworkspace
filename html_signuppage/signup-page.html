@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" width="width=devicewidth,initial scale=1.0">
+    <title>signuppage</title>
+    <head><style>
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #accdf1;
+           margin: 0;
+           justify-content: center;
+           display: flex;
+           align-items: center;
+           min-height: 100vh;
+           margin: 50px;
+        }
+        
+        .container{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffd900;
+            width: 90%;
+            padding: 4px;
+            
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            border-radius: 15px;
+
+
+        }
+        .login{
+        
+        background-color: white;
+        width: 100%;
+      
+       padding-bottom: 40px;
+       padding-top: 30px;
+       padding-right: 30px;
+       padding-left: 25px;
+       
+        margin: 0px;
+        border-radius: 15px;
+        
+       
+        }
+        
+        form
+        {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        input{
+            width: 60%;
+           box-sizing: border-box;
+        font-size: 15px;
+            border: 1px solid #dbbd0e;
+           min-block-size: 40px;
+            
+        }
+         
+        button{
+            width: 80%;
+            margin-top: 8px;
+            padding: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            color: #fff;
+        }
+        button[type="submit"]
+        {
+            width:60%;
+
+        }
+      input:focus
+      {
+        border-color: red;
+        outline: none;
+      }
+        </style>
+    </head>
+    <body>
+    <table align="center" ><td align="center" >
+        <div class="container">
+            <h1 style="color: white";><center>Create an Acount</center></h1><br/>
+            <form><a href="https://www.facebook.com/" target="_blank">
+                <button type="button"  style="background-color: rgb(78, 78, 173) ;">Sign in to facebook</button>
+               </a>
+                </br></br>     <a href="https://www.twitter.com" target="_blank">
+                    <button type="button"  style="background-color: rgb(55, 123, 196) ;">Sign in to twitter</button>
+                  
+                </a> </br></br>
+                <a href="https://www.google.com" target="_blank">
+                    <button type="button"  style="background-color: rgb(179, 15, 10) ;">Sign in to google</button>                  
+                </a>
+                </br></br>
+                <a href="https://www.behance.com" target="_blank">
+                    <button type="button"  style="background-color: rgb(55, 123, 196) ;">Sign in to behance</button>
+
+                </a><br/></br>
+                
+            </form>
+    </td>
+<td align="center" >
+    <div class="login">
+        <h3>Modern Website form</h3>
+    </br> <input type="text" id="fname" name="fname" placeholder="Username"><br>
+</br>  <input type="email" id="email" name="email" placeholder="email"></br>
+    </br><input type="password" id="pass" name="pass" placeholder="password"></br>
+</br> <button type="submit"  class="signup" style="background-color: green;">signup</button>
+
+</td></table>
+        
+
+        </div>
+        <script>
+            const forms = document.querySelector(".forms"),
+pwShowHide = document.querySelectorAll(".eye-icon"),
+links = document.querySelectorAll(".link");
+
+pwShowHide.forEach(eyeIcon => {
+eyeIcon.addEventListener("click", () => {
+  let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+  
+  pwFields.forEach(password => {
+      if(password.type === "password"){
+          password.type = "text";
+          eyeIcon.classList.replace("bx-hide", "bx-show");
+          return;
+      }
+      password.type = "password";
+      eyeIcon.classList.replace("bx-show", "bx-hide");
+  })
+  
+})
+})      
+
+links.forEach(link => {
+link.addEventListener("click", e => {
+ e.preventDefault(); //preventing form submit
+ forms.classList.toggle("show-signup");
+})
+})
+</script>
+</body>
+</html>
