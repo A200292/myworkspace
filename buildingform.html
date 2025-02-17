@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width="width=devicewidth,initial scale=1.0">
+    <title>Job Application form</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f5f7;
+        color: #333;
+        padding: 20px;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        }
+         form {
+            width: 100%;
+            max-width: 600px;
+            background-image: #fff;
+            padding:30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0 ,0, 0.1) ;
+
+        }
+        div{
+            margin-bottom: 30px;
+            
+        }
+        label{
+            display:block;
+            margin-bottom: 8px;
+            font-weight: bold;
+
+            color:#555;
+        }
+        input,select,textarea,button
+        {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+             border: 1px  solid #ddd;
+             border-radius: 4px;
+             font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus
+        {
+            border-color: #4caf4c;
+            outline: none;
+        }
+        .radio_group
+        {
+        display: flex;
+        align-items:center;
+        
+        }
+        input[type="radio"]
+
+        {
+            width:auto;
+            margin-right: 11px;
+        }
+        button
+        {
+            width:100%;
+            padding: 15px;
+            background-color:#4caf4c ;
+            color: white;
+            border:none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+
+        }
+        button[type="reset"]
+        {
+            background-color: #ff4436;
+        }
+        button:hover{
+            background-color: #45a045;
+        }
+        button[type="reset"]:hover
+        {
+            background-color: #d32f2f;
+        }
+        #demo
+        {
+            margin-top: 20px;
+            text-align: center;
+            color:#333;
+        }
+        </style>
+    </head>
+    <body>
+        <form id="Job Application">
+        <div>
+            <label for="full_name"> Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="phone">Phone Number:</label>
+               <input type="tel" id="phone" name="phone" pattern="[0-9](3)[0-9](3)[0-9](4)" required placeholder="123-456-7890">
+            </div>
+            <div>
+           <label for="position">Position Applied For:</label>
+           <select id="position" name="position">
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Project Manager">Project Manage</option>
+           </select>
+            </div>
+            <div>
+                <label for="Salary">Desired Salary:</label>
+            <input type="number" id="Salary" name="Salary" required>
+            
+            </div>
+            <div>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .dox,.docx" required>
+                </div>
+                <div>
+                    <label for="cover_letter">Cover Letter</label>
+                    <textarea name="cover_letter" id="cover_letter" rows="4" cols="50" maxlength="500" placeholder="Enter your cover letter"></textarea>
+                </div>
+                <div class="radio_group">
+                    <label>Gender:</label>
+                    <input type="radio" id="gender_male" name="gender" vale="male" required>
+                    <label for="gender_male">Male</label>
+                    <input type="radio" id="gender_female" name="gender" vale="female" required>
+                    <label for="gender_femake">Female</label>
+                </div>
+                <div>
+                   <label for="experience">Years of Experience:</label>
+                   <input type="number" id="experience" name="experience" min="1" max="20" step="1">
+                </div>
+                <div>
+        <label for="availabledate">Available date:</label>
+        <input type="datetime-local" id="availabledate" name="availabledate">
+                </div>
+                <div>
+                    <input type="hidden" id="form_id" name="form_id" value="jobapplication_001">
+                </div>
+                <div class="demo">
+<!--an emmpty devision to input information -->
+<button type="button" onclick="getlocation()">Get location</button>
+<div>
+    <button type="reset">Reset</button>
+    </div>
+    <div>
+        <button type="submit">
+            Submit Application
+        </button>
+    </div>
+        </form>
+<script>
+    
+    
+    document.getElementById('Job Application').addEventListener('Submit',function(event){
+    {
+        
+        event.preventDefault();
+    //collect the data from the  submition event
+    const formdata= new formdata(event.target);
+    // we need to get event entries 
+    const formobject = Object.fromEntries(formdata.entries());
+    // get the lat and long  || means or ''  empty string these lat and long
+    //  are created to save the entries inside
+
+    const locationDiv = getElementById("demo");
+    const latidude= locationDiv.dataset.latidude || '';
+    const longitude= locationDiv.dataset.longitude || '';
+         // append the long and lat to the form
+         formobject.latitude=latidude;
+         formobject.longitude=longitude;
+         // transform the object to json file
+         const jsonstring= JSON.stringify(formobject, null,2);
+         //blobs file are pdf docs are blob files
+         const blob=new Blob([jsonstring],{type:'applicatio/jason'});
+         const url= URL.createObjectURL(blob);//url for files
+        //we create an alement a 
+         const a= document.createElement('a');
+         a.href= url;
+         a.download= 'Job_Application.jason';
+         a.click();
+         URL.revokeObjectURL();// to take url the we already created
+   };
+     function getlocation()
+     {// we use if or else 
+        //in java scripy we use geo nevigateor to find the location but 
+        //if not supported by the window then it jumps to else
+        if( nevigator.getlocation)
+    {
+        nevigator.getlocation.getCurrentPosition(showPostion);
+
+    }
+    else{
+        document.getElementById('demo').innerHTML= 'geolicotion is not supported by your browser';
+    }
+     }
+     function showPostion(position)
+     {
+        // step 1 we want to get the position from demo
+      const locationDiv= document.getElementById('demo');
+      locationDiv.dataset.latitude=position.coords.latidude;
+      //data set save data inside 
+      locationDiv.dataset.longitude=position.coords.longitude;
+      locationDiv.innerHTML='latitude:' +postion.coords.latidude+'<br>longitude:'+position.coords.longitude;
+
+     }
+   
+
+    })
+</script>
+    </body>
+
+    </html>
